@@ -13,7 +13,7 @@ def draw_matrix(m):
                 print("XX", end='')
         print()
 
-def delete_lines(s,b,top,dy,dx,dw): #added by cwhong on 20191201
+def delete_lines(s,b,top,dy,dx,dw):
     global score
     if b == None :
         return s
@@ -34,9 +34,7 @@ def delete_lines(s,b,top,dy,dx,dw): #added by cwhong on 20191201
             nDeleted = nDeleted +1
     return s
 
-###
-### initialize variables
-###     
+
 arrayBlk = [ [ 0, 0, 1, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 1, 0 ] ]
 
 I = [ [ [ 0 , 0 , 1 ,0 ] , [ 0 , 0 , 1 , 0 ] , [ 0 , 0 , 1 , 0 ] , [ 0 , 0 , 1 , 0 ] ],
