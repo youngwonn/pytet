@@ -100,7 +100,11 @@ class Tetris():
     def accept(self, key):
         if self.state == TetrisState.NewBlock:
             self.idxBlockType = int(key)
-        self.state = TetrisState.Running
+	    self.state = TetrisState.Running
+		
+	if self.tempBlk.anyGreaterThan(1):
+            self.state = TetrisState.Finished
+            self.oScreen = Matrix(self.iScreen)
         
         if key == 'a': # left
             self.left -= 1
@@ -150,10 +154,6 @@ class Tetris():
             self.left = Tetris.iScreenDw + self.iScreenDx//2 - 2
             self.idxBlockDegree = 0
             
-
-        if self.tempBlk.anyGreaterThan(1):
-            self.state = TetrisState.Finished
-            self.oScreen = Matrix(self.iScreen)
       
         return self.state
 
